@@ -76,23 +76,26 @@ import React from "react";
 ];
 
 const CenterCard = ({ center }) => (
-  <div className="rounded-lg bg-white shadow-md p-4 flex flex-col items-center text-center">
+  <div className="rounded-2xl bg-gradient-to-br from-white to-sky-50 border border-sky-100 shadow hover:shadow-lg transition p-4 flex flex-col items-center text-center gap-2">
     <img
       src={center.image}
       alt={center.name}
-      className="w-32 h-32 rounded-full object-cover mb-2"
+      className="w-32 h-32 rounded-xl object-cover shadow"
     />
-    <h3 className="text-blue-600 font-semibold">{center.name}</h3>
-    <p className="text-sm text-gray-500">{center.location && `📍 ${center.location}`}</p>
-    <p className="text-sm text-gray-800">{center.phone && `📞 ${center.phone}`}</p>
+    <h3 className="text-sky-700 font-bold text-lg">{center.name}</h3>
+    <p className="text-sm text-gray-600">{center.description || '—'}</p>
+    <p className="text-sm text-gray-500">{center.location ? `📍 ${center.location}` : '—'}</p>
+    {center.phone && (
+      <p className="text-sm text-gray-800 mt-1">📞 {center.phone}</p>
+    )}
   </div>
 );
 
 export default function CentersDirectory() {
   return (
-    <div className="min-h-screen bg-gray-100 p-4">
-      <h1 className="text-2xl font-bold text-center text-gray-800 mb-6">المراكز</h1>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+    <div className="min-h-screen bg-gray-50 p-6">
+      <h1 className="text-3xl font-bold text-center text-sky-700 mb-8 border-b pb-2">دليل المراكز</h1>
+      <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
         {centers.map((center, index) => (
           <CenterCard key={index} center={center} />
         ))}

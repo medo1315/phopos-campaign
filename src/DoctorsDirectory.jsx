@@ -80,25 +80,30 @@ const doctors = [
   },
 ];
 
+
 const DoctorCard = ({ doctor }) => (
-  <div className="rounded-lg bg-white shadow-md p-4 flex flex-col items-center text-center">
+  <div className="rounded-2xl bg-gradient-to-br from-white to-sky-50 border border-sky-100 shadow hover:shadow-lg transition p-4 flex flex-col items-center text-center gap-2">
     <img
       src={doctor.image}
       alt={doctor.name}
-      className="w-32 h-32 rounded-full object-cover mb-2"
+      className="w-32 h-32 rounded-xl object-cover shadow"
     />
-    <h3 className="text-blue-600 font-semibold">{doctor.name}</h3>
+    <h3 className="text-sky-700 font-bold text-lg">{doctor.name}</h3>
     <p className="text-sm text-gray-600">{doctor.title}</p>
-    <p className="text-sm text-gray-500">{doctor.address && `📍 ${doctor.address}`}</p>
-    <p className="text-sm text-gray-800">{doctor.phone && `📞 ${doctor.phone}`}</p>
+    {doctor.address && (
+      <p className="text-sm text-gray-500">📍 {doctor.address}</p>
+    )}
+    {doctor.phone && (
+      <p className="text-sm text-gray-800 mt-1">📞 {doctor.phone}</p>
+    )}
   </div>
 );
 
 export default function DoctorsList() {
   return (
-    <div className="min-h-screen bg-gray-100 p-4">
-      <h1 className="text-2xl font-bold text-center text-gray-800 mb-6">الأطباء</h1>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+    <div className="min-h-screen bg-gray-50 p-6">
+      <h1 className="text-3xl font-bold text-center text-sky-700 mb-8 border-b pb-2">دليل الأطباء</h1>
+      <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
         {doctors.map((doctor, index) => (
           <DoctorCard key={index} doctor={doctor} />
         ))}
