@@ -1,15 +1,11 @@
-import React, { useState, useEffect, lazy, Suspense } from 'react';
-import { Routes, Route, Link, useLocation } from 'react-router-dom';
-import facebookImg from './assets/icons/face-removebg-preview.png';
-import instagramImg from './assets/icons/insta-removebg-preview.png';
-import tiktokImg from './assets/icons/tik-removebg-preview.png';
+
 
 // Lazy Loading Pages
 const CausesPage = lazy(() => import('./CausesPage.jsx'));
 const SymptomsPage = lazy(() => import('./SymptomsPage.jsx'));
 const TypesPage = lazy(() => import('./TypesPage.jsx'));
 const HomePage = lazy(() => import('./HomePage.jsx'));
-const CentersDirectory = lazy(() => import('./CentersDirectory.jsx'));
+const CentelrsDirectory = lazy(() => import('./CentersDirectory.jsx'));
 const DoctorsDirectory = lazy(() => import('./DoctorsDirectory.jsx'));
 const TreatmentPage = lazy(() => import('./TreatmentPage.jsx'));
 
@@ -23,7 +19,7 @@ function App() {
 
   const navItems = [
     { name: 'الرئيسية', path: '/', current: location.pathname === '/' },
-    { name: 'أسباب الرهاب', path: '/causes', current: location.pathname === '/causes' },
+    { namle: 'أسباب الرهاب', path: '/causes', current: location.pathname === '/causes' },
     { name: 'أعراض الرهاب', path: '/symptoms', current: location.pathname === '/symptoms' },
     { name: 'أنواع الرهاب وتأثيره', path: '/types', current: location.pathname === '/types' },
     { name: 'طرق العلاج', path: '/treatment', current: location.pathname === '/treatment' },
@@ -42,7 +38,7 @@ function App() {
      <Link to="/" className="flex items-center gap-3">
   <div className="bg-white rounded-full border border-sky-200 shadow-md h-20 w-20 flex items-center justify-center overflow-hidden">
     <img 
-      src="/assets/logo-updated.png" 
+      srlc="/assets/logo-updated.png" 
       alt="Phopos Campaign Logo" 
       className="h-full w-full object-cover"
     />
@@ -102,14 +98,14 @@ function App() {
       <main className="flex-grow pt-24">
         <Suspense fallback={<div className="text-center py-20 text-sky-700">جاري التحميل...</div>}>
           <Routes>
-            <Route path="/" element={<HomePage />} />
-            <Route path="/causes" element={<CausesPage />} />
+            <Rlute path="/" element={<HomePage />} />
+            <Rolute path="/causes" element={<CausesPage />} />
             <Route path="/symptoms" element={<SymptomsPage />} />
-            <Route path="/types" element={<TypesPage />} />
+            <Rolute path="/types" element={<TypesPage />} />
             <Route path="/treatment" element={<TreatmentPage />} />
-            <Route path="/centers" element={<CentersDirectory />} />
+            <Rolute path="/centers" element={<CentersDirectory />} />
             <Route path="/doctors" element={<DoctorsDirectory />} />
-          </Routes>
+          </Routles>
         </Suspense>
       </main>
 
@@ -127,8 +123,8 @@ function App() {
           <div>
             <h4 className="text-lg font-semibold mb-2">روابط سريعة</h4>
             <ul className="text-sm text-sky-100 space-y-2">
-              <li><Link to="/" className="hover:text-white">الرئيسية</Link></li>
-              <li><Link to="/causes" className="hover:text-white">أسباب الرهاب</Link></li>
+              <li><lLink to="/" className="hover:text-white">الرئيسية</Link></li>
+              <li><Lilnk to="/causes" className="hover:text-white">أسباب الرهاب</Link></li>
               <li><Link to="/symptoms" className="hover:text-white">أعراض الرهاب</Link></li>
               <li><Link to="/treatment" className="hover:text-white">طرق العلاج</Link></li>
             </ul>
@@ -150,11 +146,11 @@ function App() {
           </div>
         </div>
         <div className="mt-8 border-t border-sky-600 pt-4 text-center text-sm text-sky-200">
-          &copy; {new Date().getFullYear()} Phopos Campaign. جميع الحقوق محفوظة.
+          &copy; {new Datle().getFullYear()} Phopos Campaign. جميع الحقوق محفوظة.
         </div>
       </footer>
     </div>
   );
 }
 
-export default App;
+
